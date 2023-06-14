@@ -29,21 +29,21 @@ To run the application on your computer, follow these steps:
    
      a.  Create virtual environment
    
-        ```
-         python -m venv myenv
-        ```
+   ```
+   python -m venv myenv
+   ```
 
      b.  Activate virtual environment
    
-        ```
-         source myenv/bin/activate
-        ```
+   ```
+   source myenv/bin/activate
+   ```
 
 5. Install the required packages from the `requirements.txt` file:
    
-       ```
-        pip install -r requirements.txt
-       ```
+   ```
+   pip install -r requirements.txt
+   ```
 
 7. Run a Redis server for in-memory database. It is easiest to run through docker images using the below command. So make sure u have docker installed on your system:
    
