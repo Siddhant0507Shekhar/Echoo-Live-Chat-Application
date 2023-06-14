@@ -12,7 +12,7 @@ This is a live web application for chatting that utilizes the WebSocket protocol
 
 Django Channels is a powerful library for handling WebSockets and other asynchronous protocols in Django. It allows you to build real-time applications such as chat systems, notifications, and collaborative platforms. With Channels, you can integrate WebSockets seamlessly into your Django project, enabling bidirectional communication between the server and clients.
 
-![Chat view](echoo2.png)
+![echoo2](https://github.com/Siddhant0507Shekhar/Echoo-Live-Chat-Application/assets/122518146/b0cb1da1-7f24-4ec8-a3a6-f606b517d96a)
 
 ## Instructions to Run the Application
 
@@ -24,8 +24,9 @@ To run the application on your computer, follow these steps:
    git clone <https://github.com/Siddhant0507Shekhar/Echoo-Live-Chat-Application>
    ```
 
-![Group Settings1 view](echoo3.png)
-![Group Settings2 view](echoo4.png)
+![echoo3](https://github.com/Siddhant0507Shekhar/Echoo-Live-Chat-Application/assets/122518146/847e2cdf-63b7-495e-80aa-1e2e2ac1d29c)
+
+![echoo4](https://github.com/Siddhant0507Shekhar/Echoo-Live-Chat-Application/assets/122518146/a8eed883-9fdf-4c5f-9641-ef04dba9cad3)
 
 2. Navigate to the main Django project folder:
    ```
@@ -46,7 +47,8 @@ To run the application on your computer, follow these steps:
    source myenv/bin/activate
    ```
    
-![Admin view](echoo2.png)
+
+![echoo5](https://github.com/Siddhant0507Shekhar/Echoo-Live-Chat-Application/assets/122518146/18a07524-f2c9-4f86-a49f-8d733ceab494)
 
 4. Install the required packages from the `requirements.txt` file:
    
