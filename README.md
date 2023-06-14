@@ -14,37 +14,44 @@ Django Channels is a powerful library for handling WebSockets and other asynchro
 To run the application on your computer, follow these steps:
 
 1. Clone the repository:
-git clone <https://github.com/Siddhant0507Shekhar/Echoo-Live-Chat-Application>
+
+   ```
+   git clone <https://github.com/Siddhant0507Shekhar/Echoo-Live-Chat-Application>
+   ```
 
 
-
-2. Navigate to the main Django project folder:
+3. Navigate to the main Django project folder:
    ```
    cd echo_backend/Echo_back
    ```
 
-3. Create a virtual environment and activate it:
+4. Create a virtual environment and activate it:
+   
       Create virtual environment
+   
        ```
         python -m venv myenv
         ```
 
       Activate virtual environment
+   
        ```
        source myenv/bin/activate
        ```
 
-4. Install the required packages from the `requirements.txt` file:
+5. Install the required packages from the `requirements.txt` file:
+   
        ```
        pip install -r requirements.txt
        ```
 
-5. Run a Redis server for in-memory database. It is easiest to run through docker images using the below command. So make sure u have docker installed on your system:
+6. Run a Redis server for in-memory database. It is easiest to run through docker images using the below command. So make sure u have docker installed on your system:
+   
       ```
       docker run -p 6379:6379 -d redis:5
       ```
 
-6. Apply migrations:
+8. Apply migrations:
       ```
       python manage.py makemigrations
       ```
@@ -53,12 +60,12 @@ git clone <https://github.com/Siddhant0507Shekhar/Echoo-Live-Chat-Application>
       python manage.py migrate
       ```
 
-7. Start the development server:
+9. Start the development server:
       ```
       python manage.py runserver
       ```
 
-8. Now you can access the application in your web browser at `http://localhost:8000/`
+10. Now you can access the application in your web browser at `http://localhost:8000/`
 
 
 Feel free to modify the instructions and add any additional information specif
