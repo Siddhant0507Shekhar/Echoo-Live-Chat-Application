@@ -24,7 +24,8 @@ To run the application on your computer, follow these steps:
    git clone <https://github.com/Siddhant0507Shekhar/Echoo-Live-Chat-Application>
    ```
 
-![Group Settings view](echoo3.png)
+![Group Settings1 view](echoo3.png)
+![Group Settings2 view](echoo4.png)
 
 2. Navigate to the main Django project folder:
    ```
@@ -44,6 +45,8 @@ To run the application on your computer, follow these steps:
    ```
    source myenv/bin/activate
    ```
+   
+![Admin view](echoo2.png)
 
 4. Install the required packages from the `requirements.txt` file:
    
@@ -78,4 +81,4 @@ To run the application on your computer, follow these steps:
 8. Now you can access the application in your web browser at `http://localhost:8000/`
 
 
-Feel free to modify the instructions and add any additional information specif
+Feel free to modify the instructions and add any additional information specification
