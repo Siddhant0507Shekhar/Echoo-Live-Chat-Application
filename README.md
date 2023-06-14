@@ -29,15 +29,15 @@ To run the application on your computer, follow these steps:
    
       Create virtual environment
    
-       ```
+        ```
         python -m venv myenv
         ```
 
       Activate virtual environment
    
-       ```
-       source myenv/bin/activate
-       ```
+        ```
+        source myenv/bin/activate
+        ```
 
 5. Install the required packages from the `requirements.txt` file:
    
@@ -45,27 +45,31 @@ To run the application on your computer, follow these steps:
        pip install -r requirements.txt
        ```
 
-6. Run a Redis server for in-memory database. It is easiest to run through docker images using the below command. So make sure u have docker installed on your system:
+7. Run a Redis server for in-memory database. It is easiest to run through docker images using the below command. So make sure u have docker installed on your system:
    
       ```
       docker run -p 6379:6379 -d redis:5
       ```
 
 8. Apply migrations:
+   
       ```
       python manage.py makemigrations
       ```
-      then finally migrate
+      
+   then finally migrate
+   
       ```
       python manage.py migrate
       ```
 
-9. Start the development server:
+10. Start the development server:
+    
       ```
       python manage.py runserver
       ```
 
-10. Now you can access the application in your web browser at `http://localhost:8000/`
+12. Now you can access the application in your web browser at `http://localhost:8000/`
 
 
 Feel free to modify the instructions and add any additional information specif
