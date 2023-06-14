@@ -5,7 +5,7 @@ Live Web Chatting Application made using ReactJs and Django
 
 This is a live web application for chatting that utilizes the WebSocket protocol and is built with Django Channels.
 
-![Home view](echoo1.png)
+![echoo1](https://github.com/Siddhant0507Shekhar/Echoo-Live-Chat-Application/assets/122518146/b95d2f4f-6416-4aa4-9631-ce8667fe629c)
 
 
 ## About Django Channels
