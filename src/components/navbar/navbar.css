@@ -1,0 +1,131 @@
+#Navbar {
+    position: sticky;
+    top: 0px;
+    left: 0px;
+    z-index: 312;
+    background-color: rgb(12, 12, 43);
+    border-bottom: solid 2px white;
+}
+
+#header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100vw;
+    height: 7vh;
+    /* background-color: rgba(12, 3, 16, 0.25); */
+    background-image: linear-gradient(to bottom, rgba(42, 43, 116, 0.25), rgba(42, 13, 56, 0.25), rgba(42, 43, 116, 0.25));
+    backdrop-filter: 10px;
+    color: aliceblue;
+    border-bottom: solid 1px rgba(12, 3, 15, 0.4);
+}
+
+#main_header {
+    text-align: center;
+    font-size: 5vh;
+    font-weight: 700;
+    margin-top: 0px;
+    color: rgb(24, 24, 81);
+    background-color: aliceblue;
+    /* width: fit-content; */
+    font-family: baskerville, serif;
+}
+
+#main_header svg {
+    height: 30px;
+    width: 30px;
+    padding-left: 5px;
+    padding-top: 7px;
+}
+
+#logout a {
+    text-decoration: none;
+    color: white;
+    margin-top: 1vh;
+    font-size: 15px;
+    height: fit-content;
+    width: fit-content;
+    /* padding: 3px; */
+    padding-left: calc(50vw - 80px);
+    /* padding: calc(50vw-80px); */
+}
+
+#logout a:hover {
+    font-size: 17px;
+    backdrop-filter: 17px;
+    background-color: rgba(10, 21, 2, 0.1);
+}
+
+#nav {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr 1fr;
+    height: 5vh;
+    background-color: rgba(2, 3, 16, 0.15);
+    backdrop-filter: 10px;
+    border-bottom: solid 1.3px black;
+}
+
+.nav_links a {
+    text-decoration: none;
+    color: rgb(131, 219, 241);
+}
+
+.nav_links {
+    font-weight: 400;
+    text-align: center;
+    font-size: 2.8vh;
+    border-bottom: 3px solid transparent;
+    color: rgb(131, 219, 241);
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+    width: fit-content;
+    margin: 0 auto;
+    border-color: aliceblue;
+    transition: font-size 0.3s, border-color 0.3s;
+    height: fit-content;
+}
+
+@media (min-width:700px) {
+    .nav_links:hover {
+        font-size: 3.1vh;
+        border-color: yellow;
+        background-color: rgb(30, 30, 67);
+        border-width: 0;
+        border-bottom-width: 3px;
+        width: 70%;
+    }
+}
+
+@media (max-width:600px) {
+    .nav_links {
+        font-size: 2.1vh;
+        font-weight: 400;
+    }
+
+    #nav {
+        height: 3.2vh;
+    }
+
+    #main_header {
+        font-size: 35px;
+    }
+
+    #header {
+        height: 45px;
+    }
+
+}
+
+@media (max-width:400px) {
+    #main_header {
+        font-size: 27px;
+    }
+
+    #main_header svg {
+        height: 22px;
+        width: 22px;
+    }
+
+    #logout {
+        font-size: 8px;
+    }
+}
