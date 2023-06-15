@@ -21,7 +21,7 @@ To run the application on your computer, follow these steps:
 1. Clone the repository:
 
    ```
-   git clone <https://github.com/Siddhant0507Shekhar/Echoo-Live-Chat-Application>
+   git clone https://github.com/Siddhant0507Shekhar/Echoo-Live-Chat-Application
    ```
 
 ![echoo3](https://github.com/Siddhant0507Shekhar/Echoo-Live-Chat-Application/assets/122518146/847e2cdf-63b7-495e-80aa-1e2e2ac1d29c)
