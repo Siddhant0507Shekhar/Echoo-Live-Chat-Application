@@ -1,0 +1,55 @@
+#Admin_page{
+    width: 100vw;
+    height: 91vh;
+    /* overflow-x: hidden; */
+    overflow-y: auto;
+    padding-bottom: 5vh;
+    background-color: rgb(12,12,43);
+}
+#update_user div form div:first-child{
+    display: grid;
+    grid-template-rows: 20px 1fr;
+    margin-bottom: 10px;
+}
+#update_user div form div select{
+    height: 25px;
+}
+.form-container {
+    max-width: calc(min(300px , 70vw));
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    color: aliceblue;
+    margin-top: 2vh;
+  }
+#Admin_page h2{
+    color: aliceblue;
+    font-weight: 700;
+    text-align: center;
+}
+  .form-group {
+    margin-bottom: 15px;
+  }
+
+  .form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+
+  .form-group input {
+    width: 100%;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+
+  .form-group button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }

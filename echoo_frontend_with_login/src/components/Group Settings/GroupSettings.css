@@ -1,0 +1,307 @@
+#grpsettings {
+    background-color: rgb(12, 12, 43);
+    height: 91vh;
+    width: 99vw;
+    overflow-y: auto;
+    overflow-x: hidden;
+    font-family: Consolas, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New;
+}
+
+#create {
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    min-height: 20vh;
+    width: 100vw;
+    /* background-color: antiquewhite; */
+    /* margin-top: 0px; */
+    padding-top: 5vh;
+
+}
+
+#create_button {
+    height: 10vh;
+    width: calc(min(30vw, 200px));
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    /* margin-left: 40%;
+    margin-top: 10%; */
+    margin-left: 40vw;
+    /* margin-top: 10vh; */
+    /* margin-bottom: 5vh; */
+    border-radius: 10px;
+    border: solid 3px rgb(232, 232, 237);
+    background-color: rgb(40, 40, 78);
+    color: aliceblue;
+}
+
+#create_grp {
+    margin: auto;
+    font-size: calc(max(1.5vw, 20px));
+}
+
+#create_button:hover {
+    background-color: rgb(163, 163, 219);
+    color: rgb(3, 29, 51);
+}
+
+#create_button div:first-child {
+    margin: auto;
+    font-size: 45px;
+    font-weight: 600;
+}
+
+#search_grp {
+    height: 10vh;
+    width: 100vw;
+    padding-left: 10vw;
+    padding-right: 10vw;
+
+}
+
+#search_bar {
+    display: grid;
+    grid-template-columns: 70% 50px;
+}
+
+#search_bar input {
+    height: 35.5px;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+    padding-left: 10px;
+    font-size: 2.5vh;
+    border: solid 3px white;
+    /* border-bottom: solid 3px white */
+    background-color: rgba(236, 239, 249, 0.3);
+    color: aliceblue;
+}
+
+#search_bar input:focus {
+    outline: none;
+}
+
+#search_bar img {
+    height: 42.5px;
+    width: 42.5px;
+    border-left: solid 3px whitesmoke;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+#allGroupsInfo {
+    width: 90vw;
+    margin-left: 5vw;
+    /* color: aliceblue; */
+}
+
+.allgrp_div {
+    color: aliceblue;
+    font-size: larger;
+    font-weight: 500;
+    margin-bottom: 30px;
+    background-color: rgba(213, 121, 255, 0.04);
+    padding: 10px;
+}
+
+.allgrp_div_details {
+    display: grid;
+    grid-template-columns: 1fr 1fr 0.5fr;
+}
+
+.allgrp_div div button {
+    width: 70px;
+    border-radius: 5px;
+    /* background-color: rgb(0,0,128); */
+
+}
+
+#head_grpinfo div div {
+    font-size: x-large;
+    font-weight: 600;
+    border-bottom: solid 3px gold;
+    width: fit-content;
+}
+
+.notjoined {
+    background-color: aliceblue;
+    color: rgb(0, 0, 128);
+    max-height: 30px;
+    max-width: 20vw;
+}
+
+.joined {
+    background-color: rgb(0, 0, 128);
+    color: aliceblue;
+    max-height: 30px;
+    max-width: 20vw;
+}
+
+.notjoined:hover {
+    background-color: #00b333;
+}
+
+.joined:hover {
+    background-color: red;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#form_createGroup form {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#message_created {
+    height: 20px;
+    width: 100%;
+    color: #00b333;
+}
+
+label {
+    margin-bottom: 8px;
+}
+
+#form_createGroup {
+    color: #fff;
+}
+
+#form_createGroup form {
+    margin: auto;
+    margin-top: 4vh;
+}
+
+#form_createGroup form input[type="text"],
+#form_createGroup form select {
+    padding: 8px;
+    margin-bottom: 12px;
+}
+
+#form_createGroup button {
+    padding: 8px 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#form_createGroup form button:hover {
+    background-color: #00b333;
+}
+
+.display_off {
+    display: none;
+    height: 0px;
+    z-index: 10;
+}
+
+/* CSS for dropdown */
+.edit {
+    width: 100%;
+    z-index: 10;
+}
+
+.edit-first-child {
+    display: none;
+    grid-template-columns: 2fr 1fr;
+    background-color: rgba(12,13,123,0.1);
+}
+
+.edit-first-child div:first-child {
+    padding: 15px;
+}
+
+
+
+.edit-first-child form {
+    margin-left: 20vw;
+    display: grid;
+    grid-template-rows: 20px 100px 30px;
+    row-gap: 10px;
+    /* margin: auto; */
+}
+
+.edit-first-child form select {
+    width: calc(min(40vw, 170px));
+}
+.edit-first-child form button:hover{
+    background-color: #007bff;
+}
+
+#deletegroup {
+    margin-top: 150px;
+    background-color: red;
+    color: aliceblue;
+    font-weight: 500;
+}
+#deletegroup:hover{
+    background-color: maroon;
+}
+
+.dropdown-icon-row {
+    padding-left: 40vw;
+}
+.users-to-add{
+    background-color: rgba(108, 122, 228,0.6);
+}
+
+.dropdown-icon {
+    width: 25px;
+    height: 30px;
+    display: grid;
+    grid-template-columns: 12px 12px;
+    column-gap: 0px;
+    margin-top: 10px;
+    /* background-color: #00b333; */
+    padding-top: 10px;
+    padding-bottom: -10px;
+}
+
+.dropdown-icon div {
+    height: 3px;
+    width: 18px;
+    background-color: rgb(84, 84, 100);
+}
+
+.dropdown-line1 {
+    transform: rotate(45deg);
+}
+
+.dropdown-line2 {
+    transform: rotate(-45deg);
+}
+.dropdown-icon-row{
+    background-color: rgba(234,234,234,0.03);
+    border-radius: 40px;
+    height: 30px;
+}
+
+@media (max-width:800px){
+    .edit-first-child form {
+        margin-left: 10vw;
+    }
+}
+@media (max-width:500px){
+    #head_grpinfo div div{
+        font-size: large;
+        font-weight: 400;
+    } 
+    .allgrp_div_details div{
+        font-size: medium;
+        font-weight: 400;
+    }  
+    #create_grp{
+        font-size: 15px;
+    }
+    .allgrp_div_details div:first-child{
+        padding-right: 3px;
+    }
+
+}

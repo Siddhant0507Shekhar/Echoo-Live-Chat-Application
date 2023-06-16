@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-ow=p6)%x3tv+9*3aj)np*_0=t&-1isv#bg-0@l8ck66lb0y6hm
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -40,7 +40,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # created by me
     'Echo_api',
-    'corsheaders',
     'chat',
 ]
 #Added by me
@@ -54,9 +53,9 @@ CHANNEL_LAYERS = {
 }
 
 # Add the following settings for CORS support
-CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000",  # Replace with your React app's origin
-]
+# CORS_ALLOWED_ORIGINS = [
+#     "http://localhost:3000",  # Replace with your React app's origin
+# ]
 
 # Rest of your Django settings...
 
@@ -78,13 +77,13 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     # Added by me
-    'corsheaders.middleware.CorsMiddleware',
+    # 'corsheaders.middleware.CorsMiddleware',
 ]
-CORS_ORIGIN_ALLOW_ALL = True
-# or
-CORS_ORIGIN_WHITELIST = [
-    'http://localhost:3000',  # Replace with your React frontend URL
-]
+# CORS_ORIGIN_ALLOW_ALL = True
+# # or
+# CORS_ORIGIN_WHITELIST = [
+#     'http://localhost:3000',  # Replace with your React frontend URL
+# ]
 
 
 ROOT_URLCONF = 'Echo_back.urls'

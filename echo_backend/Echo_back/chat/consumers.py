@@ -38,13 +38,6 @@ class ChatConsumer(WebsocketConsumer):
     def receive(self, text_data):
         text_data_json = json.loads(text_data)
         message = text_data_json["message"]
-        # print(text_data_json)
-        # print(message)
-        # print(type(message))
-        # for i in message:
-        #     print(i,message[i])
-        #     d = str(i)
-            # print(d,message[d])
         group_name = message["group_name"]
         chatBy = message["chatBy"]
         chat_content = message["chat_content"]

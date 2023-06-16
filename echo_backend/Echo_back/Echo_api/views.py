@@ -4,9 +4,11 @@ from django.http import JsonResponse, HttpResponse
 from django.middleware.csrf import get_token
 import json
 from django.contrib.auth.models import User
-from django.views.decorators.csrf import csrf_exempt
 from .models import Group_cht_user,GroupChat
 from django.http import HttpResponseServerError
+from urllib.parse import urlparse
+
+
 # Create your views here.
 def get_username(request):
     if request.user.is_authenticated:
@@ -17,9 +19,8 @@ def get_username(request):
         print("not_athenticated")
         return JsonResponse({"error": "User not authenticated"}, status=401)
 
-@csrf_exempt
 def create_user(request):
-    if request.method == 'POST':
+    if request.method == 'POST' and request.user.is_authenticated:
         data = json.loads(request.body)
         username = data.get('username')
         email = data.get('email')
@@ -31,12 +32,11 @@ def create_user(request):
         user = User.objects.create_user(username=username, email=email, password=password)
         return JsonResponse({'message': 'User created successfully'}, status=201)
     else:
-        return JsonResponse({'error': 'Invalid request method'}, status=405)
+        return JsonResponse({'error': 'Invalid request method or not logged in'}, status=405)
 
 
-@csrf_exempt
 def group_chats(request):
-    if request.method == 'POST':
+    if request.method == 'POST' and request.user.is_authenticated:
         access_key = json.loads(request.body).get('access_key')
         try:
             group_cht_user = Group_cht_user.objects.get(access_key=access_key)
@@ -53,12 +53,11 @@ def group_chats(request):
         except Group_cht_user.DoesNotExist:
             return JsonResponse({'error': 'Group_cht_user not found'})
     else:
-        return JsonResponse({'error': 'Invalid request method'})
+        return JsonResponse({'error': 'Invalid request method or not logged in'})
 
 
-@csrf_exempt
 def groups(request):
-    if request.method == 'POST':
+    if request.method == 'POST' and request.user.is_authenticated:
         username = json.loads(request.body).get('username')
         user_groups = Group_cht_user.objects.all()
         groups_list = []
@@ -71,12 +70,11 @@ def groups(request):
                 groups_list.append(group_data)
         return JsonResponse(groups_list, safe=False)
     else:
-        return JsonResponse({'error': 'Invalid request method'})
+        return JsonResponse({'error': 'Invalid request method or not logged in'})
 
     
-@csrf_exempt
-def add_users_to_group(request):
-    if request.method == 'POST':
+def add_users_to_group(request) :
+    if request.method == 'POST' and request.user.is_authenticated:
         access_key = json.loads(request.body).get('accessKey')
         selected_users = json.loads(request.body).get('users')
         participants_arr = [User.objects.get(username=participant) for participant in selected_users]
@@ -91,12 +89,11 @@ def add_users_to_group(request):
 
         return JsonResponse({'status': 'success', 'message': 'Users added to group successfully'})
 
-    return JsonResponse({'status': 'error', 'message': 'Invalid request method'})
+    return JsonResponse({'status': 'error', 'message': 'Invalid request method or not logged in'})
 
 
-@csrf_exempt
 def delete_group(request):
-    if request.method == 'POST':
+    if request.method == 'POST' and request.user.is_authenticated:
         access_key = json.loads(request.body).get('Access_key')
         try:
             group = Group_cht_user.objects.get(access_key=access_key)
@@ -106,9 +103,9 @@ def delete_group(request):
             return HttpResponse(status=500)
     return HttpResponseServerError()
 
-@csrf_exempt
+
 def get_users_not_in_group(request):
-    if request.method == 'POST':
+    if request.method == 'POST' and request.user.is_authenticated:
         access_key = json.loads(request.body).get('Access_key')
         try:
             group = Group_cht_user.objects.get(access_key=access_key)
@@ -119,12 +116,11 @@ def get_users_not_in_group(request):
         user_list = [{'username': user.username, 'email': user.email} for user in users_not_in_group]
         return JsonResponse(user_list, safe=False)
 
-    return JsonResponse({'error': 'Invalid request method'}, status=400)
+    return JsonResponse({'error': 'Invalid request method or not logged in'}, status=400)
 
 
-@csrf_exempt
 def toggle_user_in_group(request):
-    if request.method == 'POST':
+    if request.method == 'POST' and request.user.is_authenticated:
         data = json.loads(request.body)
         username = data.get('username')
         group_name = data.get('groupName')
@@ -145,13 +141,15 @@ def toggle_user_in_group(request):
         except Group_cht_user.DoesNotExist:
             return JsonResponse({'message': 'Group not found'})
     else:
-        return JsonResponse({'message': 'Invalid request method'})
+        return JsonResponse({'message': 'Invalid request method or not logged in'})
 
 
 
-@csrf_exempt
+
+
+
 def group_info(request):
-    if request.method == 'POST':
+    if request.method == 'POST' and request.user.is_authenticated:
         data = json.loads(request.body)
         username = data['username']
         by_user = User.objects.get(username=username)
@@ -169,12 +167,12 @@ def group_info(request):
             response_data.append(group_data)
         return JsonResponse(response_data, safe=False)
     else:
-        return JsonResponse({'error': 'Invalid request method'}, status=400)
+        return JsonResponse({'error': 'Invalid request method or not logged in'}, status=400)
 
 
-@csrf_exempt
+
 def create_group(request):
-    if request.method == 'POST':
+    if request.method == 'POST' and request.user.is_authenticated:
         data = json.loads(request.body)
         group_name = data['groupName']
         participants = data['participants']
@@ -182,8 +180,10 @@ def create_group(request):
             return JsonResponse({'message':'Group Exists already'})
         participants_arr = [User.objects.get(username=participant) for participant in participants]
         # created_by_username = request.user.username
-        created_by_username = "Echo_admin"
+        created_by_username = data['createdBy']
         created_by_user = User.objects.get(username=created_by_username)
+        print(data)
+        print(created_by_user,created_by_username,group_name,participants)
         group = Group_cht_user.objects.create(groupName=group_name, createdBy=created_by_user)
         group.participants.add(*participants_arr)
         return JsonResponse({'message': 'Successful.', 'group_id': group.id})
@@ -191,7 +191,7 @@ def create_group(request):
     return JsonResponse({'message': 'Invalid request method'})
 
 def get_all_users(request):
-    if request.method == 'GET':
+    if request.method == 'GET' and request.user.is_authenticated:
         users = User.objects.values_list('username', flat=True)
         return JsonResponse({'users': list(users)})
 
@@ -220,9 +220,16 @@ def login_page(request):
 
     return JsonResponse({"message": "Invalid request"})
 
+
 def logout_page(request):
     if request.user.is_authenticated:
         logout(request)
-        return redirect('http://127.0.0.1:8000/')
+
+        # Extract the domain from the referring URL
+        referer = request.META.get('HTTP_REFERER')
+        domain = urlparse(referer).scheme + '://' + urlparse(referer).netloc if referer else None
+
+        return redirect(domain if domain else '/')
     else:
-        return JsonResponse({"error":"Not logged in"})
+        return JsonResponse({"error": "Not logged in"})
+
